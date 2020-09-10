@@ -4,9 +4,11 @@
   "main": "index.js",
   "author": "Ovidius Mazuru",
   "scripts": {
-    "start": "parcel index.html"
+    "start": "parcel index.html",
+    "e2e": "cypress open"
   },
   "devDependencies": {
+    "cypress": "^5.1.0",
     "parcel-bundler": "^1.12.4"
   },
   "dependencies": {
