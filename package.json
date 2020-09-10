@@ -5,10 +5,12 @@
   "author": "Ovidius Mazuru",
   "scripts": {
     "start": "parcel index.html",
-    "e2e": "cypress open"
+    "e2e": "cypress open",
+    "unit": "jest test/**/*.spec.js"
   },
   "devDependencies": {
     "cypress": "^5.1.0",
+    "jest": "^26.4.2",
     "parcel-bundler": "^1.12.4"
   },
   "dependencies": {
