@@ -1,6 +1,10 @@
 import React from 'react';
 import { mount } from 'enzyme';
 import NewRestaurantForm from '../../src/NewRestaurantForm';
+import Enzyme from 'enzyme';
+import Adapter from 'enzyme-adapter-react-16';
+
+Enzyme.configure({ adapter: new Adapter() });
 
 describe('NewRestaurantForm', () => {
     describe('clicking the save button', () => {
@@ -9,10 +13,10 @@ describe('NewRestaurantForm', () => {
 
             const wrapper = mount(<NewRestaurantForm onSave={saveHandler} />);
 
-            wrapper.find('[data-test="newRestaurantName"]')
+            wrapper.find('input[data-test="newRestaurantName"]')
                 .simulate('change', { target: { value: 'Sushi Place' } } );
 
-            wrapper.find('[data-test="saveNewRestaurantButton"]')
+            wrapper.find('button[data-test="saveNewRestaurantButton"]')
                 .simulate('click');
 
             expect(saveHandler).toHaveBeenCalledWith('Sushi Place');
